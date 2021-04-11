@@ -1,6 +1,6 @@
 <template>
   <div class="gha-page-article-edit">
-    <split-pane  :min-percent='20' :default-percent='30' split="vertical">
+    <split-pane  :min-percent='20' :default-percent='20' split="vertical">
       <template slot="paneL">
         <FileViewer>
           <template v-slot:top>
