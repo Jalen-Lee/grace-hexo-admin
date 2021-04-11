@@ -10,21 +10,41 @@ const routes = [
   {
     path: '/',
     component:  Layout,
-    redirect: '/documents',
+    redirect: '/admin',
   },
   {
-    path: '/documents',
+    path: '/admin',
     component:  Layout,
-    redirect: '/documents/123',
+    redirect: '/documents',
     meta:{},
     children: [
       {
-        path:'/documents/123',
+        path:'/recent-edit',
+        component: () => import('@/views/recent-edit'),
+        name: 'page-recent-edit',
+      },
+      {
+        path:'/documents',
         component: () => import('@/views/documents'),
-        name: 'documents',
-      }
+        name: 'page-documents',
+      },
+      {
+        path:'/documents/:name',
+        component: () => import('@/views/documents'),
+        name: 'page-documents',
+      },
+      {
+        path:'/article-tag',
+        component: () => import('@/views/tag'),
+        name: 'page-tag',
+      },
+      {
+        path:'/article-recycle',
+        component: () => import('@/views/recycle'),
+        name: 'page-recycle',
+      },
     ]
-  }
+  },
 ]
 
 const router = new VueRouter({
